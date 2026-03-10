@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>As Januárias | A Força Feminina no Forró</title>
+    <meta name="description" content="Site oficial d'As Januárias. A Girl Band de forró que está conquistando o Brasil com o protagonismo feminino e raízes nordestinas. Reserve seu show!">
+    <link rel="canonical" href="https://asjanuarias.com.br">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asjanuarias.com.br">
+    <meta property="og:title" content="As Januárias | Landing Page Oficial">
+    <meta property="og:description" content="A Girl Band de forró que exalta a força feminina. Mais de 15 milhões de visualizações.">
+    <meta property="og:image" content="https://instagram.fcpq7-1.fna.fbcdn.net/v/t51.82787-15/504791075_18278892271284431_6934582084960103183_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=110&ig_cache_key=MzY2ODY3ODMyNjA2NDE0NzA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5oZHIuQzMifQ%3D%3D&_nc_ohc=KBjJ5B3Kc9MQ7kNvwGrzW27&_nc_oc=AdnibR9VHhwdl4p6Gw7Czl_m91XFfifJbolxw3ajnc16Ualx_6t1EcCzC8iyf-aNkJA&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fcpq7-1.fna&_nc_gid=S-fMp-KfF1ZXL18zhUMeRQ&_nc_ss=8&oh=00_AfzAhESbiF4XxEuPok21NRMk0ih9HSi0lOyWOFCspkztWA&oe=69B62B8D">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://asjanuarias.com.br">
+    <meta property="twitter:title" content="As Januárias | Landing Page Oficial">
+    <meta property="twitter:description" content="A Girl Band de forró que exalta a força feminina. Mais de 15 milhões de visualizações.">
+    <meta property="twitter:image" content="https://instagram.fcpq7-1.fna.fbcdn.net/v/t51.82787-15/504791075_18278892271284431_6934582084960103183_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=110&ig_cache_key=MzY2ODY3ODMyNjA2NDE0NzA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5oZHIuQzMifQ%3D%3D&_nc_ohc=KBjJ5B3Kc9MQ7kNvwGrzW27&_nc_oc=AdnibR9VHhwdl4p6Gw7Czl_m91XFfifJbolxw3ajnc16Ualx_6t1EcCzC8iyf-aNkJA&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fcpq7-1.fna&_nc_gid=S-fMp-KfF1ZXL18zhUMeRQ&_nc_ss=8&oh=00_AfzAhESbiF4XxEuPok21NRMk0ih9HSi0lOyWOFCspkztWA&oe=69B62B8D">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FACC15'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='60' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        accent: '#FACC15', // Yellow
+                        glass: 'rgba(255, 255, 255, 0.03)',
+                    },
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background: rgba(5, 5, 5, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bento-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .bento-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #FACC15;
+            transform: translateY(-5px);
+        }
+
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(250, 204, 21, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FACC15;
+        }
+
+        /* Video Responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.9) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-4">
+            <a href="#" class="font-display text-xl md:text-2xl tracking-tighter text-accent whitespace-nowrap">AS JANUÁRIAS</a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#sobre" class="hover:text-accent transition-colors">Sobre</a>
+                <a href="#agenda" class="hover:text-accent transition-colors">Agenda</a>
+                <a href="#midia" class="hover:text-accent transition-colors">Mídia</a>
+                <a href="#contato" class="hover:text-accent transition-colors">Contato</a>
+            </nav>
+
+            <a href="https://wa.me/5581999841162" target="_blank" class="bg-accent text-dark px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-sm font-bold uppercase tracking-tighter hover:scale-105 transition-transform text-center flex items-center justify-center shrink-0">
+                Contratar Show
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://instagram.fcpq7-1.fna.fbcdn.net/v/t51.82787-15/504791075_18278892271284431_6934582084960103183_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=110&ig_cache_key=MzY2ODY3ODMyNjA2NDE0NzA0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5oZHIuQzMifQ%3D%3D&_nc_ohc=KBjJ5B3Kc9MQ7kNvwGrzW27&_nc_oc=AdnibR9VHhwdl4p6Gw7Czl_m91XFfifJbolxw3ajnc16Ualx_6t1EcCzC8iyf-aNkJA&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fcpq7-1.fna&_nc_gid=S-fMp-KfF1ZXL18zhUMeRQ&_nc_ss=8&oh=00_AfzAhESbiF4XxEuPok21NRMk0ih9HSi0lOyWOFCspkztWA&oe=69B62B8D" 
+                 alt="As Januárias Hero" 
+                 class="w-full h-full object-cover object-center md:[object-position:50%_35%]"
+                 referrerpolicy="no-referrer">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h1 class="hero-title font-display text-5xl md:text-6xl lg:text-7xl leading-none tracking-tighter mb-6">
+                A FORÇA FEMININA <br> <span class="text-accent italic">NO FORRÓ</span>
+            </h1>
+            <p class="hero-sub text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Raízes pernambucanas, vozes poderosas e o protagonismo que o Nordeste merece.
+            </p>
+            <div class="hero-btn">
+                <a href="#midia" class="cta-pulse inline-block bg-accent text-dark px-10 py-4 rounded-full text-lg font-bold uppercase tracking-tighter hover:scale-105 transition-transform">
+                    Ouvir Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAIXA DE AUTORIDADE (MARQUEE) -->
+    <section class="py-12 bg-dark border-y border-white/5 overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-content flex items-center space-x-12 md:space-x-24">
+                <span class="text-3xl md:text-5xl font-display opacity-20">+15 MILHÕES DE STREAMS</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">112 MIL SEGUIDORES</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">GIRL BAND DE FORRÓ</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">PROTAGONISMO FEMININO</span>
+                <span class="text-accent text-2xl">✦</span>
+                <!-- Repeat for seamless loop -->
+                <span class="text-3xl md:text-5xl font-display opacity-20">+15 MILHÕES DE STREAMS</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">112 MIL SEGUIDORES</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">GIRL BAND DE FORRÓ</span>
+                <span class="text-accent text-2xl">✦</span>
+                <span class="text-3xl md:text-5xl font-display opacity-20">PROTAGONISMO FEMININO</span>
+                <span class="text-accent text-2xl">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANÇAMENTO RECENTE -->
+    <section id="midia" class="py-16 px-6 max-w-7xl mx-auto reveal">
+        <div class="text-center mb-12">
+            <h2 class="font-display text-4xl md:text-6xl tracking-tighter mb-4 uppercase">Lançamento <span class="text-accent">Recente</span></h2>
+            <p class="text-gray-400 max-w-xl mx-auto">Confira nossa performance ao vivo e sinta a energia d'As Januárias.</p>
+        </div>
+        
+        <div class="max-w-full md:max-w-[73.5%] mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/5 bg-glass p-2 md:p-4">
+            <div class="video-container rounded-2xl">
+                <iframe src="https://www.youtube.com/embed/z-uJCKhfX5Y" title="As Januárias Ao Vivo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS (BENTO GRID) -->
+    <section class="py-16 px-6 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-display text-3xl md:text-5xl tracking-tighter uppercase">Nossos <span class="text-accent">Diferenciais</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                
+                <!-- Item 1: Grande -->
+                <div class="md:col-span-2 md:row-span-2 bento-item rounded-3xl p-8 flex flex-col justify-center reveal">
+                    <div class="relative z-10">
+                        <h3 class="font-display text-3xl mb-4 text-accent">Show Completo</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">Uma experiência imersiva com o melhor do forró tradicional e moderno, levando a cultura nordestina para todo o Brasil com arranjos exclusivos e uma performance de tirar o fôlego.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Médio -->
+                <div class="md:col-span-2 bento-item rounded-3xl p-8 flex flex-col justify-center reveal">
+                    <div class="text-accent text-4xl mb-4">✦</div>
+                    <h3 class="font-display text-2xl mb-2">Protagonismo Feminino</h3>
+                    <p class="text-gray-400 text-sm">Exaltando a força da mulher nordestina em cada acorde e interpretação.</p>
+                </div>
+
+                <!-- Item 3: Pequeno -->
+                <div class="bento-item rounded-3xl p-8 flex flex-col justify-center reveal">
+                    <h4 class="text-accent font-display text-4xl mb-1">+15M</h4>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Visualizações</p>
+                </div>
+
+                <!-- Item 4: Pequeno -->
+                <div class="bento-item rounded-3xl p-8 flex flex-col justify-center reveal">
+                    <h4 class="text-accent font-display text-4xl mb-1">112K</h4>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Seguidores</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 reveal">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent"></div>
+                    <img src="https://instagram.fcpq7-1.fna.fbcdn.net/v/t51.82787-15/599138771_18300096625284431_4268393161069985598_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzc4Njk2MDM4NjA5MzM3NDQ4Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTEwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=UhK_TO6M6DIQ7kNvwHooo-B&_nc_oc=Adn8JBUk0Zst30r56ixlnsMWrBB6U79s3Y3W378pTJG5QZNpeZI2T9F99uv1DZl0cbw&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fcpq7-1.fna&_nc_gid=oH6Qu_uS9MjIxPBU76FYCw&_nc_ss=8&oh=00_AfwhH1hBQE0Vl1kdfS7v6B0AFrwniMYau4DvQT0s-uxBqQ&oe=69B63399" 
+                         alt="Sobre As Januárias" 
+                         class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                         referrerpolicy="no-referrer">
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent"></div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 reveal">
+                <h2 class="font-display text-4xl md:text-6xl tracking-tighter mb-8">QUEM SÃO <br> <span class="text-accent">AS JANUÁRIAS?</span></h2>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    “As Januárias” é uma Girl Band de forró formada por Mayara Barbosa, Sidcléa Cavalcanti e Mayara B. Silva. O grupo ganhou destaque nacionalmente nas redes sociais com seus vídeos curtos interpretando clássicos da música nordestina.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-8">
+                    Com raízes na Zona da Mata Norte e no Litoral de Pernambuco, o projeto formado exclusivamente por mulheres busca exaltar a força e o protagonismo feminino no forró, trazendo uma sonoridade autêntica e vibrante.
+                </p>
+                
+                <div class="flex space-x-6">
+                    <a href="https://open.spotify.com/intl-pt/artist/21r8nXGuxyKUXPp1oEE0Ra?si=NdgKFcxfSdmdrPTrvB_6eQ" target="_blank" class="text-accent hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.215.354-.675.467-1.028.252-2.857-1.745-6.453-2.14-10.686-1.173-.404.093-.81-.158-.903-.562-.093-.404.158-.81.562-.903 4.633-1.06 8.6-1.06 11.799.893.354.215.467.675.252 1.028zm1.47-3.262c-.271.441-.849.581-1.29.31-3.27-2.01-8.25-2.59-12.11-1.42-.49.15-1.01-.13-1.16-.62-.15-.49.13-1.01.62-1.16 4.41-1.34 9.9-1.34 13.63.95.44.27.58.85.31 1.29zm.13-3.4c-3.92-2.33-10.38-2.55-14.13-1.41-.6.18-1.24-.16-1.42-.76-.18-.6.16-1.24.76-1.42 4.31-1.31 11.44-1.06 15.96 1.62.54.32.72 1.02.4 1.56-.32.54-1.02.72-1.56.4z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/asjanuarias/" target="_blank" class="text-accent hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c.796 0 1.441.645 1.441 1.44s-.645 1.44-1.441 1.44c-.795 0-1.44-.645-1.44-1.44s.645-1.44 1.44-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC7kIcQuxbBuL2wL_zP8Ggzw" target="_blank" class="text-accent hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="py-16 px-6 bg-dark reveal">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl text-center mb-12 uppercase italic tracking-tighter">O que dizem os <span class="text-accent">Contratantes</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bento-item rounded-3xl p-8">
+                    <p class="text-gray-300 italic mb-6">"Energia contagiante! As Januárias trouxeram um frescor para o nosso evento que há muito tempo não víamos no forró."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-dark font-bold">R</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Ricardo Mendes</h4>
+                            <p class="text-xs text-gray-500">Produtor de Eventos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bento-item rounded-3xl p-8 border-accent/30">
+                    <p class="text-gray-300 italic mb-6">"A técnica vocal e a presença de palco delas é algo de outro mundo. Sucesso garantido em qualquer praça."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-dark font-bold">M</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Mariana Silva</h4>
+                            <p class="text-xs text-gray-500">Secretária de Cultura</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item rounded-3xl p-8">
+                    <p class="text-gray-300 italic mb-6">"Contratamos para o São João e foi o show mais elogiado da noite. Elas dominam o público do início ao fim."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-dark font-bold">J</div>
+                        <div>
+                            <h4 class="font-bold text-sm">João Paulo</h4>
+                            <p class="text-xs text-gray-500">Empresário</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="py-12 px-6 border-t border-white/5 bg-dark">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="font-display text-2xl text-accent mb-2">AS JANUÁRIAS</h2>
+                <p class="text-gray-500 text-sm">Copyright 2026 - Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-400">Contato para Shows</p>
+                <a href="tel:+5581999841162" class="text-xl font-bold hover:text-accent transition-colors">+55 81 99984-1162</a>
+                <div class="flex space-x-4">
+                    <a href="https://www.tiktok.com/@as.janus" target="_blank" class="text-gray-500 hover:text-white transition-colors">TikTok</a>
+                    <a href="https://www.instagram.com/asjanuarias/" target="_blank" class="text-gray-500 hover:text-white transition-colors">Instagram</a>
+                    <a href="https://www.youtube.com/channel/UC7kIcQuxbBuL2wL_zP8Ggzw" target="_blank" class="text-gray-500 hover:text-white transition-colors">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP ANIMATIONS -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        const tl = gsap.timeline();
+        tl.from(".hero-title", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out"
+        })
+        .from(".hero-sub", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.8")
+        .from(".hero-btn", {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out(1.7)"
+        }, "-=0.6");
+
+        // Scroll Reveal
+        gsap.utils.toArray(".reveal").forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                y: 60,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
